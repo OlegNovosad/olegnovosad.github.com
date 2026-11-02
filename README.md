@@ -70,6 +70,52 @@ python app.py
 
 ---
 
+## 🌐 Публікація на GitHub Pages
+
+### Чому Flask не запускається на GitHub Pages напряму?
+**GitHub Pages — це виключно статичний веб-сервер.** Він вміє роздавати готові файли (`.html`, `.css`, `.js`, зображення), але **не підтримує виконання Python-коду** (`app.py`).
+
+Для цього реалізовано автоматичну генерацію статичної версії сайту (`build.py`) та готовий пайплайн **GitHub Actions**.
+
+---
+
+### Варіант 1: Автоматичний деплой через GitHub Actions (Рекомендовано)
+
+У репозиторії налаштовано workflow у файлі [`.github/workflows/deploy.yml`](file:///.github/workflows/deploy.yml).
+
+1. Запушіть репозиторій на GitHub:
+   ```bash
+   git add .
+   git commit -m "Add personal website with GitHub Pages support"
+   git push origin main
+   ```
+2. Відкрийте ваш репозиторій на GitHub.
+3. Перейдіть у **Settings** &rarr; **Pages**.
+4. У розділі **Build and deployment** &rarr; **Source** виберіть **GitHub Actions**.
+5. Дія автоматично скомпілює Flask-шаблони та опублікує сайт!
+
+---
+
+### Варіант 2: Деплой з папки `/docs` (Без дій GitHub Actions)
+
+Скрипт `build.py` автоматично створює готову збірку у папку `docs/`:
+
+1. Згенеруйте або оновіть статичні файли:
+   ```bash
+   python build.py
+   ```
+2. Запушіть зміни в репозиторій:
+   ```bash
+   git add .
+   git commit -m "Update static build in docs"
+   git push origin main
+   ```
+3. У репозиторії GitHub: **Settings** &rarr; **Pages**.
+4. У **Source** виберіть **Deploy from a branch**.
+5. Виберіть гілку `main` (або `master`) та папку **/docs**, потім натисніть **Save**.
+
+---
+
 ## ⚙️ Налаштування персональних даних
 
 Усі дані (ім'я, посилання, опис, список навичок та проєктів) знаходяться на початку файлу `app.py`:

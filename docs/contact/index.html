@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти — Олег Новосад</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style.css">
+    
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="../index.html" class="brand-logo">
+                <span class="logo-accent">&lt;/&gt;</span>
+                <span class="logo-text">Олег Новосад</span>
+            </a>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Відкрити меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+                <a href="../index.html" class="nav-link ">Головна</a>
+                <a href="../about.html" class="nav-link ">Про мене</a>
+                <a href="../projects.html" class="nav-link ">Проєкти</a>
+                <a href="../contact.html" class="nav-link btn-nav active">Зв'язатися</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Flash Messages -->
+    <div class="container">
+        
+            
+        
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+<section class="page-header">
+    <div class="container">
+        <span class="section-tag">Зворотний зв'язок</span>
+        <h1 class="page-title">Зв'яжіться зі мною</h1>
+        <p class="page-subtitle">Маєте запитання, пропозицію про роботу чи хочете обговорити проєкт?</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container contact-container">
+        <div class="contact-info-panel">
+            <h2 class="sub-heading">Давайте поспілкуємося</h2>
+            <p class="contact-lead">
+                Завжди радий новим знайомствам, цікавим ідеям та взаємодії. Залиште повідомлення у формі, або напишіть мені напряму в зручному месенджері.
+            </p>
+
+            <div class="contact-methods">
+                <div class="contact-method-item">
+                    <div class="method-icon">📍</div>
+                    <div>
+                        <div class="method-label">Місцезнаходження</div>
+                        <div class="method-value">Київ, Україна</div>
+                    </div>
+                </div>
+
+                <div class="contact-method-item">
+                    <div class="method-icon">✉️</div>
+                    <div>
+                        <div class="method-label">Електронна пошта</div>
+                        <div class="method-value">
+                            <a href="mailto:oleg@example.com">oleg@example.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-method-item">
+                    <div class="method-icon">💬</div>
+                    <div>
+                        <div class="method-label">Telegram</div>
+                        <div class="method-value">
+                            <a href="https://t.me/olegnovosad" target="_blank" rel="noopener noreferrer">@olegnovosad</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-method-item">
+                    <div class="method-icon">💼</div>
+                    <div>
+                        <div class="method-label">LinkedIn</div>
+                        <div class="method-value">
+                            <a href="https://linkedin.com/in/olegnovosad" target="_blank" rel="noopener noreferrer">olegnovosad</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-panel">
+            <div class="form-card">
+                <h3 class="form-title">Надіслати повідомлення</h3>
+                <form action="/contact" method="POST" class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Ваше ім'я *</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Олександр / Марія" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Ваш Email *</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="example@domain.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Ваше повідомлення *</label>
+                        <textarea id="message" name="message" rows="5" class="form-control" placeholder="Опишіть ваше питання або пропозицію..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Надіслати повідомлення</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <p class="footer-name">Олег Новосад</p>
+                <p class="footer-sub">Software Engineer &amp; Python Developer</p>
+            </div>
+            <div class="footer-socials">
+                <a href="https://github.com/olegnovosad" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">GitHub</a>
+                <a href="https://linkedin.com/in/olegnovosad" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">LinkedIn</a>
+                <a href="https://t.me/olegnovosad" target="_blank" rel="noopener noreferrer" class="social-link" title="Telegram">Telegram</a>
+                <a href="mailto:oleg@example.com" class="social-link" title="Email">Email</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Олег Новосад. Усі права захищено. Створено з Flask, HTML & CSS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../static/js/main.js"></script>
+    
+</body>
+</html>

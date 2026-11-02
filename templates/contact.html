@@ -63,7 +63,7 @@
         <div class="contact-form-panel">
             <div class="form-card">
                 <h3 class="form-title">Надіслати повідомлення</h3>
-                <form action="{{ url_for('contact') }}" method="POST" class="contact-form">
+                <form action="{{ url_for('contact') }}" method="POST" class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="name" class="form-label">Ваше ім'я *</label>
                         <input type="text" id="name" name="name" class="form-control" placeholder="Олександр / Марія" required>
