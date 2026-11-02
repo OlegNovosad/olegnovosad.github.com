@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}Головна — {{ profile.name }} | {{ profile.title }}{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="container hero-container">
+        <div class="hero-content">
+            <div class="status-badge">
+                <span class="status-indicator"></span>
+                <span>Відкритий до нових проєктів та пропозицій</span>
+            </div>
+            <h1 class="hero-title">
+                Привіт, я <span class="gradient-text">{{ profile.name }}</span>
+            </h1>
+            <p class="hero-subtitle">
+                {{ profile.title }}
+            </p>
+            <p class="hero-description">
+                {{ profile.bio }}
+            </p>
+            <div class="hero-actions">
+                <a href="{{ url_for('projects') }}" class="btn btn-primary">Переглянути проєкти</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-secondary">Написати мені</a>
+            </div>
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Локація:</span>
+                    <span class="meta-value">{{ profile.location }}</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Стек:</span>
+                    <span class="meta-value">Python, Flask, APIs, Cloud</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="code-card">
+                <div class="code-card-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="card-filename">developer.py</span>
+                </div>
+                <pre class="code-card-body"><code><span class="code-keyword">class</span> <span class="code-class">Developer</span>:
+    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(self):
+        self.name = <span class="code-string">"{{ profile.name }}"</span>
+        self.role = <span class="code-string">"Software Engineer"</span>
+        self.passions = [
+            <span class="code-string">"Clean Code"</span>,
+            <span class="code-string">"High Performance"</span>,
+            <span class="code-string">"Automation"</span>
+        ]
+
+    <span class="code-keyword">def</span> <span class="code-func">build_awesome_things</span>(self):
+        <span class="code-keyword">return</span> <span class="code-string">"Ready to innovate!"</span></code></pre>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects -->
+<section class="section section-projects">
+    <div class="container">
+        <div class="section-header">
+            <div>
+                <span class="section-tag">Портфоліо</span>
+                <h2 class="section-title">Вибрані проєкти</h2>
+            </div>
+            <a href="{{ url_for('projects') }}" class="link-arrow">Всі проєкти &rarr;</a>
+        </div>
+
+        <div class="projects-grid">
+            {% for project in featured_projects %}
+                <div class="project-card">
+                    <div class="project-card-header">
+                        <span class="project-badge">Featured</span>
+                        <h3 class="project-name">{{ project.title }}</h3>
+                    </div>
+                    <p class="project-description">{{ project.description }}</p>
+                    <div class="project-tags">
+                        {% for tag in project.tags %}
+                            <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="project-links">
+                        <a href="{{ project.github }}" target="_blank" rel="noopener noreferrer" class="btn-link">GitHub</a>
+                        <a href="{{ url_for('projects') }}" class="btn-link">Детальніше &rarr;</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Skills Highlights -->
+<section class="section section-skills">
+    <div class="container">
+        <div class="section-header center">
+            <span class="section-tag">Технології</span>
+            <h2 class="section-title">Мій стек та навички</h2>
+            <p class="section-subtitle">Інструменти та технології, які я використовую для створення якісних продуктів</p>
+        </div>
+
+        <div class="skills-categories-grid">
+            {% for cat in skills %}
+                <div class="skill-category-card">
+                    <h3 class="skill-category-title">{{ cat.category }}</h3>
+                    <div class="skill-tags">
+                        {% for item in cat.skills %}
+                            <span class="skill-pill">{{ item }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="section section-cta">
+    <div class="container">
+        <div class="cta-box">
+            <h2 class="cta-title">Маєте спільний проєкт чи запитання?</h2>
+            <p class="cta-text">Буду радий поспілкуватися та обговорити цікаві ідеї чи співпрацю.</p>
+            <div class="cta-actions">
+                <a href="{{ url_for('contact') }}" class="btn btn-primary btn-large">Написати мені</a>
+                <a href="{{ profile.telegram }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-large">Написати в Telegram</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

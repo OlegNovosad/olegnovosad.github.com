@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Контакти — {{ profile.name }}{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <div class="container">
+        <span class="section-tag">Зворотний зв'язок</span>
+        <h1 class="page-title">Зв'яжіться зі мною</h1>
+        <p class="page-subtitle">Маєте запитання, пропозицію про роботу чи хочете обговорити проєкт?</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container contact-container">
+        <div class="contact-info-panel">
+            <h2 class="sub-heading">Давайте поспілкуємося</h2>
+            <p class="contact-lead">
+                Завжди радий новим знайомствам, цікавим ідеям та взаємодії. Залиште повідомлення у формі, або напишіть мені напряму в зручному месенджері.
+            </p>
+
+            <div class="contact-methods">
+                <div class="contact-method-item">
+                    <div class="method-icon">📍</div>
+                    <div>
+                        <div class="method-label">Місцезнаходження</div>
+                        <div class="method-value">{{ profile.location }}</div>
+                    </div>
+                </div>
+
+                <div class="contact-method-item">
+                    <div class="method-icon">✉️</div>
+                    <div>
+                        <div class="method-label">Електронна пошта</div>
+                        <div class="method-value">
+                            <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-method-item">
+                    <div class="method-icon">💬</div>
+                    <div>
+                        <div class="method-label">Telegram</div>
+                        <div class="method-value">
+                            <a href="{{ profile.telegram }}" target="_blank" rel="noopener noreferrer">@olegnovosad</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-method-item">
+                    <div class="method-icon">💼</div>
+                    <div>
+                        <div class="method-label">LinkedIn</div>
+                        <div class="method-value">
+                            <a href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">olegnovosad</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-panel">
+            <div class="form-card">
+                <h3 class="form-title">Надіслати повідомлення</h3>
+                <form action="{{ url_for('contact') }}" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Ваше ім'я *</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Олександр / Марія" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Ваш Email *</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="example@domain.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Ваше повідомлення *</label>
+                        <textarea id="message" name="message" rows="5" class="form-control" placeholder="Опишіть ваше питання або пропозицію..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Надіслати повідомлення</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Сторінку не знайдено (404) — {{ profile.name }}{% endblock %}
+
+{% block content %}
+<section class="section section-404">
+    <div class="container text-center">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Сторінку не знайдено</h2>
+        <p class="error-desc">Здається, адреса яку ви шукаєте, була змінена або ніколи не існувала.</p>
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Повернутися на головну</a>
+    </div>
+</section>
+{% endblock %}
+
